@@ -7,43 +7,39 @@
   <title>var Refresher</title>
 </head>
 <body>
-<script>
-  var width = 100;
-  console.log("Initial assignment: ", width);
+  <script>
+    var width = 100;
+    console.log("Initial assignment: ", width);
 
-  // Re-assigning a var variable
-  width = 200 // redefined width variable
-  console.log("Redefined: ", width);
+    // Re-assigning a var variable
+    width = 200 // redefined width variable
+    console.log("Redefined: ", width);
 
-  // var variables are function-scoped
-  function setScope() {
-    var scope = 300; // defined inside a function
-    console.log("Logged from within function: ", scope);
-  }
-  
-  setScope(); // the scope variable is a local variable to the setScope function. The console.log included within the function can access the scope variable.
-  // console.log("Attempted log from outside function: ", scope); // this console.log is outside the setScope function, so it doesn't have access to the scope variable. 
+    // var variables are function-scoped
+    function setScope() {
+      var scope = 300; // defined inside a function
+      console.log("Logged from within function: ", scope);
+    }
+    
+    setScope(); // the scope variable is a local variable to the setScope function. The console.log included within the function can access the scope variable.
+    // console.log("Attempted log from outside function: ", scope); // this console.log is outside the setScope function, so it doesn't have access to the scope variable. 
 
-  // Scoping Differences
+    // Scoping Differences
 
-  var threePointMakes = 102;
-  if(threePointMakes > 50) {
-    var points = threePointMakes * 3; // points VAR variable is not defined in a function, so it is now globally scoped
-    console.log(`Player X scored ${points} points from three-pointers!!`);  
-  }
-  console.log("points variable accessible outside the if statement: ", points);
+    var threePointMakes = 102;
+    if(threePointMakes > 50) {
+      var points = threePointMakes * 3; // points VAR variable is not defined in a function, so it is now globally scoped
+      console.log(`Player X scored ${points} points from three-pointers!!`);  
+    }
+    console.log("points variable accessible outside the if statement: ", points);
 
-  var twoPointMakes = 134;
-  if (twoPointMakes > 50) {
-    let twos = twoPointMakes * 2; // twos 
-    console.log(`Player X scored ${twos} points from two-pointers!!`);
-  }
-  console.log("twos variable not accessible outside the if statement: ", twos);
+    var twoPointMakes = 134;
+    if (twoPointMakes > 50) {
+      let twos = twoPointMakes * 2; // twos LET variable is not defined in a function, but it IS in a block, so it is locally scoped.
+      console.log(`Player X scored ${twos} points from two-pointers!!`);
+    }
+    console.log("twos variable not accessible outside the if statement: ", twos);
 
-
-  let height = 200;
-  const key = "abc123";
-
-</script>
+  </script>
 </body>
 </html>
