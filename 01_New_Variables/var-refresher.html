@@ -9,6 +9,20 @@
 <body>
 <script>
   var width = 100;
+  console.log("Initial assignment: ", width);
+
+  width = 200 // redefined width variable
+  console.log("Redefined: ", width);
+
+  function setScope() {
+    var scope = 300; // defined inside a function
+    console.log("Logged from within function: ", scope);
+  }
+  
+  setScope(); // since a console.log is included within function, the scope variable is accessible.
+  console.log("Attempted log from outside function: ", scope); // trying to console.log the scope variable outside the function doesn't work.
+
+
   let height = 200;
   const key = "abc123";
 
