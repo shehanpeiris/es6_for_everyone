@@ -21,10 +21,9 @@ We always had `var` as a way to declare and assign variables. ES6 introduced `le
   * `let` variables are designed to be updated
   * `const` variables are designed to **NOT** be updated (i.e. they are immutable)
     * *Note: if an object is declared as a `const`, the object itself cannot be updated, but properties on the object **CAN** be updated*
-      For example:
-      `const shehan = {age: 29, children: 1}`
-      `shehan = {age: 30}` <- This leads to "Assignment to constant variable" error
-      `shehan.age = 30` <- This works!
+        * `const shehan = {age: 29, children: 1}`
+        * `shehan = {age: 30}` <- This leads to "Assignment to constant variable" error
+        * `shehan.age = 30` <- This works!
 
 
 
