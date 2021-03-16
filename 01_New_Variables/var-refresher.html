@@ -8,12 +8,19 @@
 </head>
 <body>
   <script>
-    var width = 100;
+    //=================================
+    // RE-ASSIGNING A VAR VARIABLE
+    //=================================
+    
+    var width = 100; // width initially set to 100
     console.log("Initial assignment: ", width);
 
-    // Re-assigning a var variable
-    width = 200 // redefined width variable
+    width = 200 // width re-assigned to 200
     console.log("Redefined: ", width);
+
+    //======================
+    // SCOPE DIFFERENCES
+    //======================
 
     // var variables are function-scoped
     function setScope() {
@@ -25,20 +32,36 @@
     // console.log("Attempted log from outside function: ", scope); // this console.log is outside the setScope function, so it doesn't have access to the scope variable. 
 
     // Scoping Differences
-
     var threePointMakes = 102;
     if(threePointMakes > 50) {
       var points = threePointMakes * 3; // points VAR variable is not defined in a function, so it is now globally scoped
       console.log(`Player X scored ${points} points from three-pointers!!`);  
     }
-    console.log("points variable accessible outside the if statement: ", points);
+    console.log("points variable accessible outside the if statement: ", points); // this code works because the points variable is globally scoped
 
     var twoPointMakes = 134;
     if (twoPointMakes > 50) {
       let twos = twoPointMakes * 2; // twos LET variable is not defined in a function, but it IS in a block, so it is locally scoped.
       console.log(`Player X scored ${twos} points from two-pointers!!`);
     }
-    console.log("twos variable not accessible outside the if statement: ", twos);
+    // console.log("twos variable not accessible outside the if statement: ", twos); // this code doesn't work because the twos variable is block-scoped and therefore isn't accessible outside of the block in which it was defined.
+
+    //======================
+    // TEMPORAL DEAD ZONE
+    //======================
+    var chicagoPizza = "deep-dish";
+    console.log(chicagoPizza); // this works fine, chicagoPizza is defined and then logged
+
+    console.log(newYorkPizza);
+    var newYorkPizza = "thin-crust"; // this yields undefined (but no error). var variables can be accessed at any point in your code if they have been declared. The value of the variable will not be accessible unless the code that requires the value is written after the variable assignment.
+
+    let cantoneseFood = "char siu"; // this works fine, cantoneseFood is defined and then logged
+    console.log(cantoneseFood);
+
+    console.log(sriLankanFood);
+    let sriLankanFood = "string-hoppers"; // this yields an error because sriLankanFood variable is called before it has been declared.
+
+
 
   </script>
 </body>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introduction to Arrow Functions</title>
+</head>
+<body>
+  <script>
+    const names = ["Zion", "Groot", "Kylian"];
+
+    // OG Function
+    const fullNames = names.map(function(name) {
+      return `${name} Peiris`;
+    })
+    console.log("OG Function: ", fullNames);
+
+    // Don't need to write "function" in ES6
+    const fullNames2 = names.map((name) => {
+      return `${name} Peiris`;
+    })
+    console.log("Step 1 (no function): ", fullNames2);
+
+    // Implicit returns in ES6
+    const fullNames3 = names.map((name) => `${name} Peiris`);
+    console.log("Step 2 (implicit return): ", fullNames3);
+
+  </script>
+</body>
+</html>
