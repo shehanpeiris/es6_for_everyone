@@ -25,6 +25,10 @@ We always had `var` as a way to declare and assign variables. ES6 introduced `le
         * `shehan = {age: 30}` <- This leads to "Assignment to constant variable" error
         * `shehan.age = 30` <- This works!
 
+* Temporal Dead Zone
+  * `var` variables can be accessed at any point in the code regardless of chronological order. The value of the variable cannot be accessed unless it's requested after variable assignment. This means if there is an order of operations mistake with a `var` variable, you will not see an error message to notify you, the variable will just be `undefined`.
+  * `let` and `const` variables need to be declared before they can be called in your code. If not, you will see an error message.
+
 
 
 
