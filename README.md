@@ -2,6 +2,8 @@
 
 Repo for me to work through Wes Bos' course: [ES6 for Everyone](https://es6.io/).
 
+**Latest Video Watched: Module 2, Video 8**
+
 ### Module 1: New Variables
 
 We always had `var` as a way to declare and assign variables. ES6 introduced `let` and `const` variables.

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Arrow Functions & this</title>
+</head>
+<body>
+
+  <style>
+    .wrap {
+      min-height: 100vh;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      font-family: sans-serif;
+      font-weight: 100;
+      color:white;
+    }
+
+    .box {
+      background:black url(https://unsplash.it/1500/1500?image=560&blur=0.5) center fixed no-repeat;
+      width:50px;
+      height:50px;
+      padding:50px;
+      transition: width 0.2s, height 0.6s;
+      position: relative;
+    }
+
+    .box.opening {
+      width:500px;
+      height:500px;
+    }
+
+    .box h2 {
+      position: absolute;
+      width:100%;
+      font-size: 100px;
+      transform:translateX(-200%);
+      transition: all 0.5s;
+      top:0;
+    }
+
+    .box p {
+      position: absolute;
+      width:100%;
+      transform:translateX(200%);
+      transition: all 0.5s;
+      bottom:0;
+    }
+
+    .box.open > * {
+      transform:translateX(0%);
+    }
+  </style>
+
+  <div class="wrap">
+    <div class="box">
+      <h2>Wes Bos</h2>
+      <p class="social">@wesbos</p>
+    </div>
+  </div>
+
+  <script>
+
+    // ==================================================================
+    // this code shows the effects of using classic functions and this
+    // ==================================================================
+
+    // const boxOgFunc = document.querySelector(".box");
+    // boxOgFunc.addEventListener("click", function() {
+    //   this.classList.toggle("opening");
+    //   setTimeout(function() {
+    //     console.log("value of THIS using old school function: ", this); // with the classic function expression, `this` is bound to the context of the function. In this case, `this` is rebound to the window.
+    //     this.classList.toggle("open");
+    //   }, 500);
+    // });
+
+    const boxArrowFunc = document.querySelector(".box");
+    boxArrowFunc.addEventListener("click", function() {
+      let first = "opening";
+      let second = "open";
+      if (this.classList.contains(first)) {
+        [first, second] = [second, first];
+      }
+
+      this.classList.toggle(first);
+      setTimeout(() => {
+        console.log("value of THIS using arrow function: ", this); // with an arrow function, `this` is lexically bound, inherits `this` value from where it was originally declared.
+        this.classList.toggle(second);
+      }, 500);
+    });
+
+
+  </script>
+
+</body>
+</html>

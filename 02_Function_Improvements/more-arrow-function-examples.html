@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>More Arrow Function Examples</title>
+</head>
+<body>
+  <script>
+    // ===================================
+    //   USING ARROW FUNCTIONS WITH MAP
+    // ===================================
+    const uefa = "Champions League";
+    const epl = "Premier League";
+
+    const uefaStandings = ["Liverpool", "Manchester City", "Bayern Munich", "Chelsea", "Paris Saint-Germain", "Real Madrid", "Borussia Dortmund", "FC Porto"];
+    const eplStandings = ["Manchester City", "Manchester United", "Leicester City", "Chelsea", "West Ham", "Tottenham", "Liverpool"];
+    
+    const uefaPodium = uefaStandings.map((team, i) => ({team, competition: uefa, place: i +1}));
+    const eplPodium = eplStandings.map((team, i) => ({team, competition: epl, place: i +1}));
+
+    // ===================================
+    //   USING ARROW FUNCTIONS WITH FILTER
+    // ===================================
+    const patientAges = [23,43,56,89,92,96,34,57,62,90,76,95];
+    const elementsNeedingConversion = patientAges.filter((patientAge) => patientAge >=89);
+
+    const needsConversion = (currentValue) => {
+      if (currentValue >= 89) {
+        currentValue = "89+";
+      };
+    }
+  
+    const limitedDataSet = patientAges.map((age) => age >= 89 ? "89+" : age);
+
+  </script>
+</body>
+</html>
