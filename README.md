@@ -34,14 +34,14 @@ We always had `var` as a way to declare and assign variables. ES6 introduced `le
 
 ### Module 2: Improvements to Functions
 
-**The Introduction Arrow Functions**
-Benefits:
-* more concise
-* implicit returns
-* anonymous functions
-  * these are functions without names; typically used as an argument to other functions or as an Immediately Invoked Function Expression (IIFE)
-* doesn't rebind the value of `this`
-  * with arrow functions, `this` is bound to the object in which the arrow function was defined. This means it inherits `this` from the parent object. The main value of this is the ability to use `this` more easily in nested functions. For example, with event listeners, you want to update the button (the `this`) the user clicked.
+**The Introduction of Arrow Functions**
+  Benefits:
+  * more concise
+  * implicit returns
+  * anonymous functions
+    * these are functions without names; typically used as an argument to other functions or as an Immediately Invoked Function Expression (IIFE)
+  * doesn't rebind the value of `this`
+    * with arrow functions, `this` is bound to the object in which the arrow function was defined. This means it inherits `this` from the parent object. The main value of this is the ability to use `this` more easily in nested functions. For example, with event listeners, you want to update the button (the `this`) the user clicked.
 
 **Default Function Arguments**
 ES6 now allows us to define default function arguments in the initial line of function definition.
