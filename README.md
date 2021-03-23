@@ -32,15 +32,23 @@ We always had `var` as a way to declare and assign variables. ES6 introduced `le
   * `var` variables can be accessed at any point in the code regardless of chronological order. The value of the variable cannot be accessed unless it's requested after variable assignment. This means if there is an order of operations mistake with a `var` variable, you will not see an error message to notify you, the variable will just be `undefined`.
   * `let` and `const` variables need to be declared before they can be called in your code. If not, you will see an error message.
 
-### Module 2: Arrow Functions
+### Module 2: Improvements to Functions
 
-**The Benefits of Arrow Functions**
+**The Introduction Arrow Functions**
+Benefits:
 * more concise
 * implicit returns
 * anonymous functions
   * these are functions without names; typically used as an argument to other functions or as an Immediately Invoked Function Expression (IIFE)
 * doesn't rebind the value of `this`
+  * with arrow functions, `this` is bound to the object in which the arrow function was defined. This means it inherits `this` from the parent object. The main value of this is the ability to use `this` more easily in nested functions. For example, with event listeners, you want to update the button (the `this`) the user clicked.
 
+**Default Function Arguments**
+ES6 now allows us to define default function arguments in the initial line of function definition.
+
+*see `4-default-function-arguments.html` file for more detail**
+
+**When NOT to use Arrow Functions**
 
 
 
