@@ -35,7 +35,7 @@ We always had `var` as a way to declare and assign variables. ES6 introduced `le
 ### Module 2: Improvements to Functions
 
 **The Introduction of Arrow Functions**
-  Benefits:
+Benefits:
   * more concise
   * implicit returns
   * anonymous functions
