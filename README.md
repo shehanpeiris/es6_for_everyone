@@ -2,7 +2,7 @@
 
 Repo for me to work through Wes Bos' course: [ES6 for Everyone](https://es6.io/).
 
-**Latest Video Watched: Module 2, Video 10**
+**Latest Video Watched: Module 2, Video 11**
 
 ### Module 1: New Variables
 
@@ -55,4 +55,6 @@ ES6 now allows us to define default function arguments in the initial line of fu
   * when you are designing a method that you want bound to an object
   * when you need to build a method that is bound to a prototype
   * when you need to use the arguments object of a function
+
+### Module 3: Template Strings
 
