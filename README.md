@@ -45,6 +45,7 @@ Benefits:
     * with arrow functions, `this` is bound to the object in which the arrow function was defined. This means it inherits `this` from the parent object.
 
 **Default Function Arguments**
+
 ES6 now allows us to define default function arguments in the initial line of function definition.
 
 *see `4-default-function-arguments.html` file for more detail**
