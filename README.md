@@ -2,7 +2,7 @@
 
 Repo for me to work through Wes Bos' course: [ES6 for Everyone](https://es6.io/).
 
-**Latest Video Watched: Module 2, Video 8**
+**Latest Video Watched: Module 2, Video 11**
 
 ### Module 1: New Variables
 
@@ -32,15 +32,29 @@ We always had `var` as a way to declare and assign variables. ES6 introduced `le
   * `var` variables can be accessed at any point in the code regardless of chronological order. The value of the variable cannot be accessed unless it's requested after variable assignment. This means if there is an order of operations mistake with a `var` variable, you will not see an error message to notify you, the variable will just be `undefined`.
   * `let` and `const` variables need to be declared before they can be called in your code. If not, you will see an error message.
 
-### Module 2: Arrow Functions
+### Module 2: Improvements to Functions
 
-**The Benefits of Arrow Functions**
-* more concise
-* implicit returns
-* anonymous functions
-  * these are functions without names; typically used as an argument to other functions or as an Immediately Invoked Function Expression (IIFE)
-* doesn't rebind the value of `this`
+**The Introduction of Arrow Functions**
 
+Benefits:
+  * more concise
+  * implicit returns
+  * anonymous functions
+    * these are functions without names; typically used as an argument to other functions or as an Immediately Invoked Function Expression (IIFE)
+  * doesn't rebind the value of `this`
+    * with arrow functions, `this` is bound to the object in which the arrow function was defined. This means it inherits `this` from the parent object.
 
+**Default Function Arguments**
 
+ES6 now allows us to define default function arguments in the initial line of function definition.
+
+*see `4-default-function-arguments.html` file for more detail**
+
+**When NOT to use Arrow Functions**
+  * when you really need `this` (e.g. adding a callback function to an event listener where you need to refer to `this` button)
+  * when you are designing a method that you want bound to an object
+  * when you need to build a method that is bound to a prototype
+  * when you need to use the arguments object of a function
+
+### Module 3: Template Strings
 

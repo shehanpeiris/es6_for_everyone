@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Default Function Arguments</title>
+</head>
+<body>
+  <script>
+    
+    // Let's create a function that calculates your total restaurant bill (including subtotal, tax, and tip).
+    function calculateBill(total, tax, tip) {
+      return total + (total * tax) + (total * tip);
+    };
+
+    // Example of our function in action. You pass in the 3 arguments and get your total.
+    const billOne = calculateBill(100, 0.11, 0.2);
+    console.log("And your bill is: ", billOne);
+
+    // ======================================================================================
+    // But tax and tip can often be fixed variables. Is there a way to streamline this code?
+    // We could assign specific values to the tax and tip variables, but this doesn't offer
+    // any flexibility. Are there ways we can provide default values YET still offer the
+    // flexibility of user-inputted tax and tip rates?
+    // ======================================================================================
+
+    // Option A: Use if statements to provide a default value
+    function optionA(totalA, taxA, tipA) {
+      if (taxA === undefined) {
+        taxA = 0.11; 
+      };
+      if (tipA === undefined) {
+        tipA = 0.2; 
+      };
+
+      return totalA + (totalA * taxA) + (totalA * tipA);
+    };
+    
+    const billA = optionA(100);
+    console.log("Your Bill A is: ", billA);
+
+    // Option B: More efficient way of coding Option A.
+    function optionB(totalB, taxB, tipB) {
+      taxB = taxB || 0.11;
+      tipB = tipB || 0.2;
+      return totalB + (totalB * taxB) + (totalB * tipB);
+    };
+
+    const billB = optionB(100);
+    console.log("Your Bill B is: ", billB);
+
+    // Option C: Define default arguments in the function itself.
+    function optionC(totalC, taxC = 0.11, tipC = 0.2) {
+      return totalC + (totalC * taxC) + (totalC * tipC);
+    };
+
+    const billC = optionC(100);
+    console.log("Your Bill C is: ", billC);
+
+  </script>
+</body>
+</html>
