@@ -2,7 +2,7 @@
 
 Repo for me to work through Wes Bos' course: [ES6 for Everyone](https://es6.io/).
 
-**Latest Video Watched: Module 2, Video 9**
+**Latest Video Watched: Module 2, Video 10**
 
 ### Module 1: New Variables
 
@@ -35,13 +35,14 @@ We always had `var` as a way to declare and assign variables. ES6 introduced `le
 ### Module 2: Improvements to Functions
 
 **The Introduction of Arrow Functions**
+
 Benefits:
   * more concise
   * implicit returns
   * anonymous functions
     * these are functions without names; typically used as an argument to other functions or as an Immediately Invoked Function Expression (IIFE)
   * doesn't rebind the value of `this`
-    * with arrow functions, `this` is bound to the object in which the arrow function was defined. This means it inherits `this` from the parent object. The main value of this is the ability to use `this` more easily in nested functions. For example, with event listeners, you want to update the button (the `this`) the user clicked.
+    * with arrow functions, `this` is bound to the object in which the arrow function was defined. This means it inherits `this` from the parent object.
 
 **Default Function Arguments**
 ES6 now allows us to define default function arguments in the initial line of function definition.
@@ -49,6 +50,8 @@ ES6 now allows us to define default function arguments in the initial line of fu
 *see `4-default-function-arguments.html` file for more detail**
 
 **When NOT to use Arrow Functions**
-
-
+  * when you really need `this` (e.g. adding a callback function to an event listener where you need to refer to `this` button)
+  * when you are designing a method that you want bound to an object
+  * when you need to build a method that is bound to a prototype
+  * when you need to use the arguments object of a function
 
