@@ -9,13 +9,21 @@
 <body>
   <h1>Playing with Template Strings!!</h1>
   <div class="pets">
+    <h2>Pets (Nesting Template Literals)</h2>
     <button id="add-pets">Click Me to Pull Pets Info!</button>
     <div class="pets-info"></div>
   </div>
   
   <div class="songs">
+    <h2>Songs (Running code in Template Literals</h2>
     <button id="add-songs">Click Me to Pull Songs Info!</button>
     <div class="songs-info"></div>
+  </div>
+
+  <div class="beers">
+    <h2>Beers (rendering functions in Template Literals</h2>
+    <button id="add-beers">Click Me to Pull the Beer Menu!</button>
+    <div class="beers-info"></div>
   </div>
   
   <script>
@@ -92,7 +100,28 @@
     // ==============================================
     // Rendering Functions inside Template Literals
     // ==============================================
+    const beers = [
+      {name: "Lizard King", brewery: "Pipeworks", notes: ["hoppy", "strong", "earthy"]},
+      {name: "Fat Tire", brewery: "New Belgium Ale", notes: ["smooth", "lager", "fruity"]},
+      {name: "Allagash White", brewery: "Allagash Brewing Co.", notes: ["mildly hoppy", "smooth", "summer beer"]},
+      {name: "Guinness Stout", brewery: "Guinness", notes: ["chocolatey", "stout", "strong"]}
+    ];
+
+    function renderNotes(notes) {
+      return `${notes.map(note => `<i>${note}</i>`).join(", ")}`
+    };
+
+    const beersMarkup = `
+      <p>Our Beer List for tonight: </p>
+      <ul class="beer-list">
+        ${beers.map(beer => `<li><strong>${beer.name}</strong> (${beer.brewery}) ${renderNotes(beer.notes)}</li>`).join("")}
+      </ul>
+    `;
     
+    const pullBeerInfo = () => document.querySelector(".beers-info").innerHTML = beersMarkup;
+    document.querySelector("#add-beers").addEventListener("click", pullBeerInfo);
+
+
 
   </script>
 </body>
