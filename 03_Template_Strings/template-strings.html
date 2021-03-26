@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Template Strings Introduction</title>
+</head>
+<body>
+  <h1>Playing with Template Strings!!</h1>
+  <div class="pets">
+    <button id="add-pets">Click Me to Pull Pets Info!</button>
+    <div class="pets-info"></div>
+  </div>
+  
+  <div class="songs">
+    <button id="add-songs">Click Me to Pull Songs Info!</button>
+    <div class="songs-info"></div>
+  </div>
+  
+  <script>
+    // ======================================
+    // Incorporating variables into strings
+    // ======================================
+    
+    // PRE ES6
+    var interruptor = "stupid variable";
+    var sentenceOne = "This is a sentence that is broken up by this " + interruptor + " and it's very annoying."
+    console.log(sentenceOne);
+
+    // ES6
+    const templateString = "glorious variable";
+    const sentenceTwo = `This is an ES6 sentence that includes this ${templateString} directly in the string.`;
+    console.log(sentenceTwo);
+
+    // Playing around with template strings and arrays.
+    const favoriteHoopers = ["LeBron James", "Nikola Jokic", "Kyle Lowry", "Damian Lillard"];
+    favoriteHoopers.forEach(hooper => console.log(`${hooper} is one of my favorite NBA players`));
+
+    // Playing around with template strings and objects.
+    const liverpoolPlayers = {
+      most: "Virgil Van Dijk",
+      second: "Roberto Firmino",
+      third: "Sadio Mane"
+    };
+
+    for (const property in liverpoolPlayers) {
+      console.log(`My ${property} favorite Liverpool player is ${liverpoolPlayers[property]}`);
+    }
+
+    // ===========================
+    // Nesting Template Literals
+    // ===========================
+
+    const pets = [
+      {name: "Jordan", age: 7, animal: "dog"},
+      {name: "Luna", age: 3, animal: "cat"},
+      {name: "Uno", age: 1, animal: "parrot"},
+      {name: "Oliver", age: 4, animal: "dog"}
+    ];
+
+    const petsMarkup = `
+      <p>I have the following pets:</p>
+      <ul class="pets-list">
+        ${pets.map(pet => `<li>I have a pet ${pet.animal} named ${pet.name} who is ${pet.age} years old.</li>`).join("")}
+      </ul>
+    `;
+
+    const pullPetsInfo = () => document.querySelector(".pets-info").innerHTML = petsMarkup;
+    document.querySelector("#add-pets").addEventListener("click", pullPetsInfo);
+
+    // ===================================================
+    // Running JavaScript code inside template literals
+    // ===================================================
+    const songs = [
+      {title: "Freedom", artist: "Beyonce", featuring: "Kendrick Lamar"},
+      {title: "DNA", artist: "Kendrick Lamar"},
+      {title: "Heavy", artist: "Linkin Park", featuring: "Kiaara"},
+      {title: "Wait For It", artist: "Leslie Odom Jr."}
+    ];
+
+    const songsMarkup = `
+      <p>Some of my favorite songs are: </p>
+      <ul class="songs-list">
+        ${songs.map(song => `<li>${song.title} by ${song.artist}${song.featuring ? ` (feat. ${song.featuring})`:``}</li>`).join("")}
+      </ul>
+    `;
+    
+    const pullSongsInfo = () => document.querySelector(".songs-info").innerHTML = songsMarkup;
+    document.querySelector("#add-songs").addEventListener("click", pullSongsInfo);
+
+    // ==============================================
+    // Rendering Functions inside Template Literals
+    // ==============================================
+    
+
+  </script>
+</body>
+</html>
