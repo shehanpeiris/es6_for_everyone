@@ -2,7 +2,7 @@
 
 Repo for me to work through Wes Bos' course: [ES6 for Everyone](https://es6.io/).
 
-**Latest Video Watched: Module 2, Video 11**
+**Latest Video Watched: Module 2, Video 13**
 
 ### Module 1: New Variables
 
@@ -58,3 +58,8 @@ ES6 now allows us to define default function arguments in the initial line of fu
 
 ### Module 3: Template Strings
 
+**What are the benefits of Template Strings (or Template Literals)?**
+
+* It's a pain in the ass to mix variables and strings in JavaScript. Template Strings streamline that process by letting you write variables in the string using ``, $ and {}.
+* Template literals are easier for inserting HTML markup using a string.
+* We can run JavaScript code inside a template literal.
