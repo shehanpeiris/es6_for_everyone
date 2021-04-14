@@ -2,9 +2,7 @@
 
 Repo for me to work through Wes Bos' course: [ES6 for Everyone](https://es6.io/).
 
-**Latest Video Watched: Module 3, Video 16**
-
-**Finished Module 3: Template Strings**
+**Latest Video Watched: Module 3, Video 16 || Finished Module 3: Template Strings**
 
 ### Module 1: New Variables
 
