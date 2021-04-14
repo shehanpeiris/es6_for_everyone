@@ -2,7 +2,7 @@
 
 Repo for me to work through Wes Bos' course: [ES6 for Everyone](https://es6.io/).
 
-**Latest Video Watched: Module 2, Video 13**
+**Latest Video Watched: Module 2, Video 15**
 
 ### Module 1: New Variables
 
